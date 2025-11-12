@@ -1,0 +1,40 @@
+CREATE LOGIN Administrador
+WITH PASSWORD = 'adminpass@',
+CHECK_POLICY = OFF
+GO
+
+CREATE LOGIN Empresa
+WITH PASSWORD = 'empresspass',
+CHECK_POLICY = OFF
+GO
+
+CREATE LOGIN Institucion
+WITH PASSWORD = 'institiud123@',
+CHECK_POLICY = OFF
+GO
+
+
+
+CREATE USER Administrador FOR LOGIN Administrador;
+CREATE USER Administrador FOR LOGIN Empresa;
+CREATE USER Administrador FOR LOGIN Institucion;
+
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Calificacion] TO Administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Bloqueo] TO Administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Producto] TO Administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Reporte] TO Administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Usuario] TO Administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Reporte] TO Administrador
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Notificacion] TO Administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Solicitud] TO Administrador;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Solicitud_Producto] TO Administrador;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Producto] TO Empresa;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Reporte] TO Empresa;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Notificacion] TO Empresa;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Solicitud] TO Empresa;
+
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Producto] TO Institucion;
+GRANT SELECT, INSERT, UPDATE, DELETE ON [Solicitud] TO Institucion;
